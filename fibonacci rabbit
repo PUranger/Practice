@@ -1,0 +1,35 @@
+def fibonacci(n):
+    if n == 0:
+        return 0
+    if n == 1:
+        return 1
+    return fibonacci(n-1) + fibonacci(n-2)
+
+def fib2(n):                              % faster than previous one
+    current = 0
+    after = 1
+    for i in range(0,n):
+        current, after = after, current + after
+    return current
+
+
+print fibonacci(1)
+print fibonacci(2)
+print fibonacci(3)
+print fibonacci(4)
+print fibonacci(5)
+print fibonacci(36)
+print fib2(1)
+print fib2(2)
+print fib2(3)
+print fib2(4)
+print fib2(5)
+print fib2(36)
+
+
+mass_of_earth = 5.9722 * 10
+mass_of_rabbit = 2
+n = 1
+while fibonacci(n) * mass_of_rabbit < mass_of_earth:
+    n = n+1
+print n, fibonacci(n)
